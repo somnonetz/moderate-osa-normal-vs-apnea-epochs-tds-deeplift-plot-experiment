@@ -101,7 +101,7 @@ inputs:
       pyModule: "cc_core.commons.connectors.http"
       pyClass: "Http"
       access:
-        url: "https://raw.githubusercontent.com/somnonetz/healthy-osa-tds-deeplift-plot-experiment/master/ticks.csv"
+        url: "https://raw.githubusercontent.com/somnonetz/moderate-osa-normal-vs-apnea-epochs-tds-deeplift-plot-experiment/master/ticks.csv"
         method: "GET"
   data_files:
     - class: "File"
@@ -109,7 +109,7 @@ inputs:
         pyModule: "cc_core.commons.connectors.http"
         pyClass: "Http"
         access:
-          url: "https://raw.githubusercontent.com/somnonetz/healthy-osa-tds-deeplift-plot-experiment/master/data/OSA_Healthy_TDS_deeplift_mean_LS.csv"
+          url: "https://raw.githubusercontent.com/somnonetz/moderate-osa-normal-vs-apnea-epochs-tds-deeplift-plot-experiment/master/Moderate_OSA_TDS_deeplift_mean_LS.csv"
           method: "GET"
   titles_file:
     class: "File"
@@ -117,9 +117,11 @@ inputs:
       pyModule: "cc_core.commons.connectors.http"
       pyClass: "Http"
       access:
-        url: "https://raw.githubusercontent.com/somnonetz/healthy-osa-tds-deeplift-plot-experiment/master/titles.csv"
+        url: "https://raw.githubusercontent.com/somnonetz/moderate-osa-normal-vs-apnea-epochs-tds-deeplift-plot-experiment/master/titles.csv"
         method: "GET"
   columns: 2
+  vmin: -0.02641553784158776
+  vmax: 0.029530663754099552
 
 container:
   engine: "docker"
