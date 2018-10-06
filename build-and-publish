@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+
+set -eu
+
+VERSION=0.2-5.3.2
+
+docker pull docker.io/debian:9.5-slim
+docker build -t docker.io/copla/ctp:${VERSION} .
+docker run docker.io/copla/ctp:${VERSION} ccagent --version
+docker run docker.io/copla/ctp:${VERSION} ctp --help
+docker push docker.io/copla/ctp:${VERSION}

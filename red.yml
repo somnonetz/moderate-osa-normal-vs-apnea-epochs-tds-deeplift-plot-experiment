@@ -1,0 +1,129 @@
+redVersion: "5"
+cli:
+  cwlVersion: "v1.0"
+  class: "CommandLineTool"
+  baseCommand: "ctp"
+  doc: "Combination Triangles Plot."
+
+  inputs:
+    ticks_file:
+      type: "File"
+      inputBinding:
+        position: 0
+      doc: "CSV file with two columns and no header row. First column contains the axis ticks as used in the data index. Second column has tick translations to display in plot."
+    data_files:
+      type: "File[]"
+      inputBinding:
+        position: 1
+      doc: "CSV files with three columns and a single header row. First column (index) contains the combined axis ticks. Second and third columns contain data to be plotted in lower left and upper right triangles respectively. Each CSV file is displayed in separate subplot. Data column names provided in header row are used in plot."
+    titles_file:
+      type: "File?"
+      inputBinding:
+        prefix: "-t"
+      doc: "CSV file with one column and no header row. Contains a subplot title for each data file in corresponding order."
+    tick_separator:
+      type: "string?"
+      inputBinding:
+        prefix: "-s"
+      doc: "Single CHAR, separating axis ticks in the data index."
+    columns:
+      type: "int?"
+      inputBinding:
+        prefix: "-c"
+      doc: "Number of COLUMNS for subplots."
+    subplot_size:
+      type: "int?"
+      inputBinding:
+        prefix: "--subplot-size"
+      doc: "Size of subplots."
+    cbar_x:
+      type: "float?"
+      inputBinding:
+        prefix: "--cbar-x"
+      doc: "X position of color bar."
+    cbar_y:
+      type: "float?"
+      inputBinding:
+        prefix: "--cbar-y"
+      doc: "Y position of color bar."
+    cbar_width:
+      type: "float?"
+      inputBinding:
+        prefix: "--cbar-width"
+      doc: "Width of color bar."
+    cbar_height:
+      type: "float?"
+      inputBinding:
+        prefix: "--cbar-height"
+      doc: "Height of color bar."
+    label_ll_x:
+      type: "float?"
+      inputBinding:
+        prefix: "--label-ll-x"
+      doc: "X position of lower left (ll) label."
+    label_ll_y:
+      type: "float?"
+      inputBinding:
+        prefix: "--label-ll-y"
+      doc: "Y position of lower left (ll) label."
+    label_ur_x:
+      type: "float?"
+      inputBinding:
+        prefix: "--label-ur-x"
+      doc: "X position of upper right (ur) label."
+    label_ur_y:
+      type: "float?"
+      inputBinding:
+        prefix: "--label-ur-y"
+      doc: "Y position of upper right (ur) label."
+    vmin:
+      type: "float?"
+      inputBinding:
+        vmin: "--vmin"
+      doc: "Scale minimum. Default is the minimum value across all plots."
+    vmax:
+      type: "float?"
+      inputBinding:
+        vmin: "--vmax"
+      doc: "Scale maximum. Default is the maximum value across all plots."
+  
+  outputs:
+    plot:
+      type: "File"
+      outputBinding:
+        glob: "plot.pdf"
+      doc: "Plot in PDF format."
+
+inputs:
+  ticks_file:
+    class: "File"
+    connector:
+      pyModule: "cc_core.commons.connectors.http"
+      pyClass: "Http"
+      access:
+        url: "https://raw.githubusercontent.com/somnonetz/healthy-osa-tds-deeplift-plot-experiment/master/ticks.csv"
+        method: "GET"
+  data_files:
+    - class: "File"
+      connector:
+        pyModule: "cc_core.commons.connectors.http"
+        pyClass: "Http"
+        access:
+          url: "https://raw.githubusercontent.com/somnonetz/healthy-osa-tds-deeplift-plot-experiment/master/data/OSA_Healthy_TDS_deeplift_mean_LS.csv"
+          method: "GET"
+  titles_file:
+    class: "File"
+    connector:
+      pyModule: "cc_core.commons.connectors.http"
+      pyClass: "Http"
+      access:
+        url: "https://raw.githubusercontent.com/somnonetz/healthy-osa-tds-deeplift-plot-experiment/master/titles.csv"
+        method: "GET"
+  columns: 2
+
+container:
+  engine: "docker"
+  settings:
+    image:
+      url: "docker.io/copla/ctp:0.2-5.3.2"
+    ram: 1024

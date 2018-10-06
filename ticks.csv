@@ -1,0 +1,38 @@
+Leg,Leg
+HR,HR
+Abd,BR$_{abd}$
+Chest,BR$_{chest}$
+Air,BR$_{air}$
+Chin,Chin
+Eye1,Eye$_1$
+Eye2,Eye$_2$
+O1d,$\delta$ O1
+C3d,$\delta$ C3
+FRd,$\delta$ FR
+FLd,$\delta$ FL
+C4d,$\delta$ C4
+O2d,$\delta$ O2
+O1t,$\theta$ O1
+C3t,$\theta$ C3
+FRt,$\theta$ FR
+FLt,$\theta$ FL
+C4t,$\theta$ C4
+O2t,$\theta$ O2
+O1a,$\alpha$ O1
+C3a,$\alpha$ C3
+FRa,$\alpha$ FR
+FLa,$\alpha$ FL
+C4a,$\alpha$ C4
+O2a,$\alpha$ O2
+O1s,$\sigma$ O1
+C3s,$\sigma$ C3
+FRs,$\sigma$ FR
+FLs,$\sigma$ FL
+C4s,$\sigma$ C4
+O2s,$\sigma$ O2
+O1b,$\beta$ O1
+C3b,$\beta$ C3
+FRb,$\beta$ FR
+FLb,$\beta$ FL
+C4b,$\beta$ C4
+O2b,$\beta$ O2
