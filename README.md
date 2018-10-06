@@ -12,7 +12,4 @@ cd moderate-osa-normal-vs-apnea-epochs-tds-deeplift-plot-experiment
 
 # local execution via faice agent
 faice agent red red.yml
-
-# remote execution via faice exec
-faice exec red.yml
 ```

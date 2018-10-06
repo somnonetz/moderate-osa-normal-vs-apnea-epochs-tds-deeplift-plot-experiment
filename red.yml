@@ -119,9 +119,12 @@ inputs:
       access:
         url: "https://raw.githubusercontent.com/somnonetz/moderate-osa-normal-vs-apnea-epochs-tds-deeplift-plot-experiment/master/titles.csv"
         method: "GET"
-  columns: 2
-  vmin: -0.0264
-  vmax: 0.0295
+  vmin: -0.02641553784158776
+  vmax: 0.029530663754099552
+  label_ll_x: -5.3
+  label_ll_y: 39.0
+  label_ur_x: 38.3
+  label_ur_y: -4.2
 
 container:
   engine: "docker"
