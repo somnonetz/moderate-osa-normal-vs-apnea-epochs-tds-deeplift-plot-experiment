@@ -79,12 +79,12 @@ cli:
     vmin:
       type: "float?"
       inputBinding:
-        vmin: "--vmin"
+        prefix: "--vmin"
       doc: "Scale minimum. Default is the minimum value across all plots."
     vmax:
       type: "float?"
       inputBinding:
-        vmin: "--vmax"
+        prefix: "--vmax"
       doc: "Scale maximum. Default is the maximum value across all plots."
   
   outputs:
@@ -120,8 +120,8 @@ inputs:
         url: "https://raw.githubusercontent.com/somnonetz/moderate-osa-normal-vs-apnea-epochs-tds-deeplift-plot-experiment/master/titles.csv"
         method: "GET"
   columns: 2
-  vmin: -0.02641553784158776
-  vmax: 0.029530663754099552
+  vmin: -0.0264
+  vmax: 0.0295
 
 container:
   engine: "docker"
