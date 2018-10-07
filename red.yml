@@ -121,10 +121,10 @@ inputs:
         method: "GET"
   vmin: -0.02641553784158776
   vmax: 0.029530663754099552
-  label_ll_x: -5.3
-  label_ll_y: 39.0
-  label_ur_x: 38.3
-  label_ur_y: -4.2
+  label_ll_x: -4.7
+  label_ll_y: 38.7
+  label_ur_x: 38.2
+  label_ur_y: -4.5
 
 container:
   engine: "docker"
