@@ -5,7 +5,7 @@ This is a reproducible experiment in RED format. Use the `faice` CLI tool from t
 The experiment is based on the [Combination Trianlges Plot](https://github.com/somnonetz/combination-triangles-plot) CLI tool.
 
 ```bash
-pip3 install --user --upgrade "cc-faice>=5.3.1,<5.4"
+pip3 install --user --upgrade "cc-faice>=5.4.0,<5.5"
 
 git clone git@github.com:somnonetz/moderate-osa-normal-vs-apnea-epochs-tds-deeplift-plot-experiment.git
 cd moderate-osa-normal-vs-apnea-epochs-tds-deeplift-plot-experiment
